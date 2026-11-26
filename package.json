@@ -1,6 +1,7 @@
 {
   "name": "web-design-reference",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "capture": "node scripts/capture.mjs",

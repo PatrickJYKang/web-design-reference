@@ -94,3 +94,7 @@ The project began with a heavier method. For each page, an isolated agent built 
 - **The capture measures the page at rest, scrolled to the top.** Hover and focus states, bars that appear on scroll, scroll-driven animation, and anything drawn in canvas or WebGL show up in screenshots but not in the measurements.
 - **Some sites refuse automated capture.** Those are skipped, not worked round. Cookie banners are declined only when they offer a plain refusal button.
 - **Entries describe a page on a date.** Sites change without their URL changing. `captured` says when; re-run the capture to see what moved.
+
+## Licence
+
+MIT, see `LICENSE`. It covers this repository's scripts and the entries as written. The sites the entries describe, and their designs, belong to their owners.
