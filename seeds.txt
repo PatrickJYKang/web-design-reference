@@ -1,0 +1,370 @@
+# Candidate references, one URL per line. Text after # is ignored.
+#
+# Sites come from the owner or from an agent. An agent adds only pages people have already
+# filtered: award and gallery sites (Godly, Land-book, Minimal Gallery, SiteInspire, Awwwards,
+# Mobbin) or sites the owner has named.
+#
+# Aim for variety: a list of twenty dark SaaS landing pages teaches one look.
+
+# owner picks
+https://www.apple.com/iphone/
+
+# Found by an agent on 2026-11-24 in curated galleries, in each gallery's own order. The comment says
+# where each one was listed. Two galleries (Land-book, Lapa Ninja) refused the visit and were skipped.
+
+# product and software sites
+https://gettakecontrol.app/en  # agent, from Minimal Gallery (app)
+https://www.furnitureconnect.com  # agent, from Minimal Gallery (startup)
+https://enode.com  # agent, from Minimal Gallery (software)
+https://ardor.cloud/retro-computer  # agent, from Minimal Gallery (saas)
+https://bauhausclock.com  # agent, from Httpster (application or software)
+https://pixelpoetry.heredesign.com  # agent, from Httpster (product)
+https://cozyjournal.app  # agent, from Minimal Gallery (app)
+https://causal.so  # agent, from Minimal Gallery (startup)
+# https://buena.com/dev  # not kept: a cookie wall with no plain refusal covers the page (agent, from Minimal Gallery (software))
+https://www.unifygtm.com  # agent, from Minimal Gallery (saas)
+https://www.overpass.com  # agent, from Httpster (application or software)
+# https://mnmll.ist  # not kept: the domain no longer resolves (agent, from Httpster (product))
+https://sevengrid.app  # agent, from Minimal Gallery (app)
+https://spek.app  # agent, from Minimal Gallery (startup)
+https://www.cantor8.io  # agent, from Minimal Gallery (software)
+https://hellomatik.com  # agent, from Minimal Gallery (saas)
+https://www.wiz.io  # agent, from Httpster (application or software)
+https://designedbywomen.org  # agent, from Httpster (product)
+https://screentune.app  # agent, from Minimal Gallery (app)
+https://www.flowlife.com  # agent, from Minimal Gallery (startup)
+https://factory.ai  # agent, from Minimal Gallery (software)
+https://www.contentarchitecture.dev  # agent, from Minimal Gallery (saas)
+# https://www.eclipse.builders  # not kept: a terms-of-service modal covers every screen (agent, from Httpster (application or software))
+https://crumpler.com  # agent, from Httpster (product)
+
+# shops
+# http://www.madebyhusk.com  # not kept: the page mostly failed to render (agent, from Siteinspire (e commerce))
+https://ossa.wine  # agent, from Httpster (online store)
+https://zeyraglow.com  # agent, from Minimal Gallery (e commerce)
+https://astropad.com  # agent, from Ecomm.design
+https://etoile.com  # agent, from Siteinspire (e commerce)
+https://counter-forms.com  # agent, from Httpster (online store)
+https://inmysho.es  # agent, from Minimal Gallery (e commerce)
+https://sneakerboxshop.ca  # agent, from Ecomm.design
+https://siha.com.au  # agent, from Siteinspire (e commerce)
+# https://www.limlondon.com  # not kept: the domain is parked (agent, from Httpster (online store))
+https://wattspet.com  # agent, from Minimal Gallery (e commerce)
+# https://clothbase.com  # not kept: it refuses automated requests (HTTP 403) (agent, from Ecomm.design)
+https://fume-studio.com  # agent, from Siteinspire (e commerce)
+https://deonlibra.com  # agent, from Httpster (online store)
+https://eternalblue.co.nz  # agent, from Minimal Gallery (e commerce)
+https://www.active-hop.com  # agent, from Ecomm.design
+https://jakobsencopenhagen.com  # agent, from Siteinspire (e commerce)
+https://shopmrbeast.com  # agent, from Httpster (online store)
+# https://ceciliebahnsen.com  # not kept: a cookie wall with no plain refusal covers the page (agent, from Minimal Gallery (e commerce))
+https://www.bloomandwolf.com/en  # agent, from Ecomm.design
+
+# studios and portfolios
+https://sydopia.com  # agent, from Siteinspire (agencies and consultancies)
+https://www.martinfoucaut.com  # agent, from Siteinspire (portfolio)
+https://www.danielvignal.com  # agent, from Minimal Gallery (portfolio)
+https://www.softlabor.biz  # agent, from Hoverstat.es
+https://www.maximalestudio.com  # agent, from Siteinspire (agencies and consultancies)
+https://fredericlord.com  # agent, from Siteinspire (portfolio)
+https://glebich.com  # agent, from Minimal Gallery (portfolio)
+https://othermeans.us  # agent, from Hoverstat.es
+https://arrova.eu  # agent, from Siteinspire (agencies and consultancies)
+https://oliviaplender.org  # agent, from Siteinspire (portfolio)
+https://kevinhipke.com  # agent, from Minimal Gallery (portfolio)
+https://xk.studio  # agent, from Hoverstat.es
+https://www.haikoo.org  # agent, from Siteinspire (agencies and consultancies)
+https://etablissements.studio  # agent, from Siteinspire (portfolio)
+https://jay.tel  # agent, from Minimal Gallery (portfolio)
+https://tiger.exposed  # agent, from Hoverstat.es
+
+# magazines and blogs
+https://developments.media  # agent, from Httpster (magazine)
+https://visualjournal.it  # agent, from Httpster (blog)
+https://hemstacks.antikythera.org  # agent, from Minimal Gallery (blog)
+https://solar.lowtechmagazine.com  # agent, from Httpster (magazine)
+# https://www.careofchan.com  # not kept: an intro overlay hides the page (agent, from Httpster (blog))
+https://iamrob.in  # agent, from Minimal Gallery (blog)
+https://emergencemagazine.org  # agent, from Httpster (magazine)
+https://bpando.org  # agent, from Httpster (blog)
+https://www.thomasmoes.com/52obsessions  # agent, from Minimal Gallery (blog)
+# https://www.exhibition-magazine.com  # not kept: a newsletter modal covers every screen (agent, from Httpster (magazine))
+https://the-brandidentity.com  # agent, from Httpster (blog)
+https://thenewindustrials.com  # agent, from Minimal Gallery (blog)
+https://slowness.com  # agent, from Httpster (magazine)
+https://www.madebyfolk.com  # agent, from Httpster (blog)
+
+# culture, food, fashion, type and other sites
+https://www.outreach.space  # agent, from Httpster (event)
+https://theatre-cite.com  # agent, from Httpster (culture)
+https://benvenusa.com  # agent, from Httpster (food drink)
+https://www.makingsoftware.com  # agent, from Httpster (education)
+https://wam.studio  # agent, from Httpster (architecture and industrial design)
+https://vivienscreative.com.au  # agent, from Httpster (fashion)
+https://holographik.space  # agent, from Minimal Gallery (museum gallery)
+https://www.dropdeadgenerous.org  # agent, from Minimal Gallery (non profit charity)
+https://trulytype.com  # agent, from Minimal Gallery (type foundry)
+https://denmu.com  # agent, from Minimal Gallery (finance)
+https://temporaryliveness.org  # agent, from Httpster (event)
+https://nationalmuseumofmexicanart.org  # agent, from Httpster (culture)
+https://www.malaproject.com  # agent, from Httpster (food drink)
+# https://www.uspsdelivers.com/2020-2021-generational-research-report  # not kept: the page is gone (HTTP 404) (agent, from Httpster (education))
+https://www.snohetta.com  # agent, from Httpster (architecture and industrial design)
+https://www.georgecox.co.uk  # agent, from Httpster (fashion)
+https://www.vangoghmuseum.nl/en  # agent, from Minimal Gallery (museum gallery)
+https://apossible.com  # agent, from Minimal Gallery (non profit charity)
+https://neuemontreal.com  # agent, from Minimal Gallery (type foundry)
+https://www.aspensearch.com  # agent, from Minimal Gallery (finance)
+https://darkmofo.net.au  # agent, from Httpster (event)
+https://www.francomariaricci.com  # agent, from Httpster (culture)
+# https://puresunfarms.com  # not kept: an age and location gate stands in front of the site (agent, from Httpster (food drink))
+https://www.index-space.org  # agent, from Httpster (education)
+
+# pricing pages
+https://gettakecontrol.app/en/pricing  # agent, pricing page of a site listed on Minimal Gallery (app)
+https://causal.so/pricing  # agent, pricing page of a site listed on Minimal Gallery (startup)
+https://spek.app/pricing  # agent, pricing page of a site listed on Minimal Gallery (startup)
+https://www.furnitureconnect.com/en/pricing  # agent, pricing page of a site listed on Minimal Gallery (startup)
+https://www.melius.com/pricing  # agent, pricing page of a site listed on Minimal Gallery (startup)
+https://www.unifygtm.com/pricing  # agent, pricing page of a site listed on Minimal Gallery (saas)
+https://www.overpass.com/pricing  # agent, pricing page of a site listed on Httpster (application or software)
+https://www.wiz.io/pricing  # agent, pricing page of a site listed on Httpster (application or software)
+https://amie.so/pricing  # agent, pricing page of a site listed on Httpster (application or software)
+https://www.flowponent.com/components/pricing  # agent, pricing page of a site listed on Landingfolio (pricing)
+https://www.sketch.com/pricing  # agent, pricing page of a site listed on Httpster (product)
+https://www.figcomponents.com/components/pricing  # agent, pricing page of a site listed on Landingfolio (pricing)
+https://www.headshotpro.com/pricing  # agent, pricing page of a site listed on Landingfolio (pricing)
+https://www.prointro.com  # agent, pricing page of a site listed on Landingfolio (pricing)
+https://www.slashspace.ai/pricing  # agent, pricing page of a site listed on Landingfolio (pricing)
+
+# docs pages
+https://cozyjournal.app/docs  # agent, docs page of a site listed on Minimal Gallery (app)
+https://spek.app/docs  # agent, docs page of a site listed on Minimal Gallery (startup)
+# https://docs.furnitureconnect.com  # not kept: it is a sign-in page (agent, docs page of a site listed on Minimal Gallery (startup))
+https://docs.melius.com  # agent, docs page of a site listed on Minimal Gallery (startup)
+# https://platform.enode.com/api  # not kept: it is a sign-in page (agent, docs page of a site listed on Minimal Gallery (software))
+https://docs.unifygtm.com/getting-started/welcome  # agent, docs page of a site listed on Minimal Gallery (saas)
+# https://docs.wiz.io  # not kept: it returns an error page (agent, docs page of a site listed on Httpster (application or software))
+https://www.sketch.com/docs  # agent, docs page of a site listed on Httpster (product)
+
+# single product pages
+https://ossa.wine/product/2025-chardonnay-tasmania-case-of-six  # agent, product page of a site listed on Httpster (online store)
+https://shop.astropad.com/collections/shop-astropad/products/fresh-coat  # agent, product page of a site listed on Ecomm.design
+https://zeyraglow.com/product/glow-nila-body-cream  # agent, product page of a site listed on Minimal Gallery (e commerce)
+https://sneakerboxshop.ca/collections/nike-mens/products/nike-shox-tl-ih4466-095-metallic-silver-summit-white  # agent, product page of a site listed on Ecomm.design
+https://wattspet.com/products/better-mobility-hip-joint-supplement-for-dogs  # agent, product page of a site listed on Minimal Gallery (e commerce)
+https://siha.com.au/products/neroli-cleansing-oil  # agent, product page of a site listed on Siteinspire (e commerce)
+https://fume-studio.com/products/fan  # agent, product page of a site listed on Siteinspire (e commerce)
+https://www.active-hop.com/products/drop  # agent, product page of a site listed on Ecomm.design
+https://deonlibra.com/products/smoove-exfoliating-cleanser  # agent, product page of a site listed on Httpster (online store)
+https://jakobsencopenhagen.com/en/products/joana-1-5-seater  # agent, product page of a site listed on Siteinspire (e commerce)
+https://eternalblue.co.nz/products/restoring-shampoo  # agent, product page of a site listed on Minimal Gallery (e commerce)
+# https://www.bloomandwolf.com/eu/en/products/ruby-rose-bouquet  # not kept: a newsletter modal covers every screen (agent, product page of a site listed on Ecomm.design)
+
+# single articles
+https://solar.lowtechmagazine.com/2026/09/out-now-low-tech-magazine-volume-iv  # agent, article of a site listed on Httpster (magazine)
+https://iamrob.in/blog/2026_08_18-role-of-a-design-engineer  # agent, article of a site listed on Minimal Gallery (blog)
+https://emergencemagazine.org/essay/seeds-and-our-coevolved-psyches  # agent, article of a site listed on Httpster (magazine)
+https://www.thomasmoes.com/52obsessions/rebranding-europe  # agent, article of a site listed on Minimal Gallery (blog)
+https://the-brandidentity.com/project/how-never-thought-studio-rebranded-an-online-coffee-brand-for-retail  # agent, article of a site listed on Httpster (blog)
+# https://www.exhibition-magazine.com/articles/stories-issu-rita-lino  # not kept: a newsletter modal covers every screen (agent, article of a site listed on Httpster (magazine))
+https://bpando.org/2026/11/18/less-loaded  # agent, article of a site listed on Httpster (blog)
+https://www.madebyfolk.com/podcast/46-output  # agent, article of a site listed on Httpster (blog)
+https://slowness.com/journal/arno-brandlhuber  # agent, article of a site listed on Httpster (magazine)
+
+# Found by an agent on 2026-11-26, second batch, same galleries plus Saaspo, skipping every site above.
+
+# product and software sites
+http://linkletter.press  # agent, from Minimal Gallery (tools)
+https://kommakomma.is  # agent, from Minimal Gallery (programming)
+https://futureagi.com  # agent, from Minimal Gallery (saas)
+https://ploy.ai  # agent, from Minimal Gallery (ai)
+# https://uno.app  # not kept: the domain no longer resolves (agent, from Httpster (application or software))
+https://www.huddle.works  # agent, from Httpster (service)
+https://microsoft.ai  # agent, from Minimal Gallery (software)
+https://humblytics.com  # agent, from Saaspo
+https://findyourbeacon.app  # agent, from Minimal Gallery (tools)
+# https://ordernchaos.aiziza.com  # not kept: only an intro splash rendered (agent, from Minimal Gallery (programming))
+https://rig.ai  # agent, from Minimal Gallery (saas)
+https://projectsimply.com  # agent, from Minimal Gallery (ai)
+https://capital.xyz  # agent, from Httpster (application or software)
+# https://spaces.loversmagazine.com  # not kept: the page is gone (HTTP 404) (agent, from Httpster (service))
+https://ruxsoftware.com  # agent, from Minimal Gallery (software)
+https://www.twohands.studio  # agent, from Saaspo
+https://ponder.ai  # agent, from Minimal Gallery (tools)
+https://bymonolog.com  # agent, from Minimal Gallery (programming)
+https://usedropshot.com  # agent, from Minimal Gallery (saas)
+https://arc.net  # agent, from Httpster (application or software)
+https://www.lorenzodaldosso.it  # agent, from Httpster (service)
+https://www.einride.tech  # agent, from Minimal Gallery (software)
+https://www.telli.com  # agent, from Saaspo
+https://www.diffusion.studio  # agent, from Minimal Gallery (tools)
+# https://noteworthy.studio  # not kept: it is a holding page (agent, from Minimal Gallery (programming))
+https://www.mezmo.com  # agent, from Httpster (application or software)
+# https://ot.studio  # not kept: a flashing-content warning gate covers every screen (agent, from Httpster (service))
+https://www.normalcomputing.com  # agent, from Minimal Gallery (software)
+
+# shops
+https://www.stereoscopecoffee.com  # agent, from Siteinspire (e commerce)
+# https://www.c23studio.io  # not kept: its certificate fails (agent, from Httpster (beauty))
+https://fellowship.xyz  # agent, from Httpster (online store)
+https://www.tequs.com  # agent, from Minimal Gallery (product)
+https://visualsociety.ch  # agent, from Siteinspire (e commerce)
+https://haleysbeauty.com  # agent, from Httpster (beauty)
+https://099.supply  # agent, from Httpster (online store)
+# https://shop.robinhood.com  # not kept: a splash gate covers every screen (agent, from Minimal Gallery (product))
+https://arcteryx.com/us/en/explore/system0  # agent, from Siteinspire (e commerce)
+# https://byhumankind.com  # not kept: it refuses automated requests (HTTP 402) (agent, from Httpster (beauty))
+https://www.darkroom.au  # agent, from Httpster (online store)
+# https://www.originalsin.co  # not kept: a newsletter modal covers every screen (agent, from Minimal Gallery (product))
+https://wwake.com  # agent, from Siteinspire (e commerce)
+# https://www.marcoicecream.com  # not kept: the site has been taken over by gambling spam (agent, from Httpster (online store))
+
+# studios and portfolios
+https://www.coaika.co  # agent, from Siteinspire (design and art direction)
+https://wschupfer.com  # agent, from Siteinspire (photography)
+https://www.maximiliankaspar.com  # agent, from Siteinspire (web and interactive design)
+https://teriksandersstudio.com  # agent, from Minimal Gallery (personal)
+https://dontmatter.eu  # agent, from Minimal Gallery (agency)
+https://www.oliverdupuy.com  # agent, from Hoverstat.es
+https://www.wedge.work  # agent, from Siteinspire (design and art direction)
+https://vivmgmt.com  # agent, from Siteinspire (photography)
+https://gilhuybrecht.com  # agent, from Siteinspire (web and interactive design)
+https://www.zacharyallott.com  # agent, from Minimal Gallery (personal)
+https://12ft.studio/lab  # agent, from Minimal Gallery (agency)
+https://andrewtrousdale.com  # agent, from Hoverstat.es
+https://www.madethought.com  # agent, from Siteinspire (design and art direction)
+https://www.iwonderu.se  # agent, from Siteinspire (photography)
+https://ntch.design  # agent, from Minimal Gallery (personal)
+https://milkinside.com  # agent, from Minimal Gallery (agency)
+https://lonalih.com  # agent, from Hoverstat.es
+https://officebenganz.com  # agent, from Siteinspire (design and art direction)
+
+# magazines and blogs
+# https://miilkiina.com  # not kept: the site has been taken over by casino spam (agent, from Httpster (magazine))
+# https://www.tabletmag.com  # not kept: it refuses automated requests (HTTP 403) (agent, from Httpster (news))
+http://www.ayearofconsciouspractice.com  # agent, from Httpster (blog)
+https://www.semiconbio.com  # agent, from Minimal Gallery (research)
+https://www.bustle.com  # agent, from Httpster (magazine)
+# https://brandbeats.basicagency.com  # not kept: its server is down (HTTP 522) (agent, from Httpster (news))
+# https://iweighcommunity.com  # not kept: it asks for a password (agent, from Httpster (blog))
+https://overbrowsing.com  # agent, from Minimal Gallery (research)
+# https://www.deemjournal.com  # not kept: its typeface and images failed to load in the capture (agent, from Httpster (magazine))
+https://theoutline.com  # agent, from Httpster (news)
+# https://www.itsnicethat.com  # not kept: a cookie wall with no plain refusal covers part of every screen (agent, from Httpster (blog))
+https://www.unconditionalmagazine.com  # agent, from Httpster (magazine)
+http://www.2016.promo  # agent, from Httpster (news)
+# https://forbottoms.com  # not kept: the domain no longer resolves (agent, from Httpster (blog))
+http://www.kinfolk.com  # agent, from Httpster (magazine)
+https://kedzich.com  # agent, from Httpster (blog)
+
+# culture, events, places and other sites
+https://hackney.church  # agent, from Httpster (culture)
+https://huxleyparlour.com  # agent, from Httpster (event)
+# https://2022.madebynull.com  # not kept: a splash gate stands in front of the site (agent, from Httpster (music))
+https://www.maisonlesgrandschenes.com  # agent, from Httpster (travel)
+https://www.studio-office.fun  # agent, from Httpster (property)
+https://possiblemonuments.se  # agent, from Httpster (education)
+# https://madremezcal.com  # not kept: an age gate covers the page (agent, from Httpster (food drink))
+https://giolabs.lu  # agent, from Minimal Gallery (museum gallery)
+# https://www.riseplasma.com  # not kept: it is a holding page (agent, from Minimal Gallery (science))
+https://menkind.co  # agent, from Minimal Gallery (healthcare)
+https://www.theflatironbuilding.com  # agent, from Minimal Gallery (real estate)
+https://www.studioplato.co  # agent, from Minimal Gallery (architecture interior design)
+https://www.brinkerhoffpoetry.org  # agent, from Httpster (culture)
+https://pitchforkmusicfestival.fr  # agent, from Httpster (event)
+https://www.heartbeatdrummachine.com  # agent, from Httpster (music)
+https://hotelpeterandpaul.com  # agent, from Httpster (travel)
+# https://thecuriousoffice.com  # not kept: it timed out (agent, from Httpster (property))
+https://howmanyplants.com  # agent, from Httpster (education)
+https://cabifoods.com  # agent, from Httpster (food drink)
+https://layer.com  # agent, from Minimal Gallery (museum gallery)
+https://www.untillabs.com  # agent, from Minimal Gallery (science)
+https://www.instituteofhealth.com  # agent, from Minimal Gallery (healthcare)
+# https://gate108.cc  # not kept: it timed out (agent, from Minimal Gallery (real estate))
+https://driessenarchitectuur.nl  # agent, from Minimal Gallery (architecture interior design)
+https://montreal.mutek.org  # agent, from Httpster (event)
+https://heartbeatdrummachine.plan8.co  # agent, from Httpster (music)
+
+# pricing pages
+https://www.diffusion.studio/pricing  # agent, pricing page of a site listed on Minimal Gallery (tools)
+https://ponder.ai/pricing  # agent, pricing page of a site listed on Minimal Gallery (tools)
+https://futureagi.com/pricing  # agent, pricing page of a site listed on Minimal Gallery (saas)
+https://ploy.ai/pricing  # agent, pricing page of a site listed on Minimal Gallery (ai)
+https://www.huddle.works/pricing  # agent, pricing page of a site listed on Httpster (service)
+https://humblytics.com/pricing  # agent, pricing page of a site listed on Saaspo
+https://www.telli.com/pricing  # agent, pricing page of a site listed on Saaspo
+https://www.respan.ai/pricing  # agent, pricing page of a site listed on Saaspo
+https://www.baseten.co/pricing  # agent, pricing page of a site listed on Saaspo
+https://accessgrid.com/pricing  # agent, pricing page of a site listed on Saaspo
+
+# docs pages
+https://ponder.ai/docs  # agent, docs page of a site listed on Minimal Gallery (tools)
+https://docs.rig.ai  # agent, docs page of a site listed on Minimal Gallery (saas)
+https://docs.futureagi.com  # agent, docs page of a site listed on Minimal Gallery (saas)
+https://docs.ploy.ai  # agent, docs page of a site listed on Minimal Gallery (ai)
+https://docs.humblytics.com  # agent, docs page of a site listed on Saaspo
+https://docs.telli.com  # agent, docs page of a site listed on Saaspo
+https://www.respan.ai/docs/documentation/overview  # agent, docs page of a site listed on Saaspo
+https://docs.baseten.co  # agent, docs page of a site listed on Saaspo
+https://accessgrid.com/docs  # agent, docs page of a site listed on Saaspo
+
+# single product pages
+https://www.stereoscopecoffee.com/products/holiday-blend  # agent, product page of a site listed on Siteinspire (e commerce)
+https://visualsociety.ch/shop/st5-b-pant-bj001  # agent, product page of a site listed on Siteinspire (e commerce)
+https://haleysbeauty.com/products/re-veal-lash-lengthening-mascara  # agent, product page of a site listed on Httpster (beauty)
+https://shop.robinhood.com/products/feather-crest-hoodie  # agent, product page of a site listed on Minimal Gallery (product)
+https://www.darkroom.au/product/085-foamy-can  # agent, product page of a site listed on Httpster (online store)
+
+# single articles
+http://www.ayearofconsciouspractice.com/texts/editors-foreword  # agent, article of a site listed on Httpster (blog)
+https://www.bustle.com/entertainment/best-new-books-november-2026  # agent, article of a site listed on Httpster (magazine)
+https://theoutline.com/post/8935/an-open-letter-to-my-dog-who-wont-come-out-from-under-the-couch  # agent, article of a site listed on Httpster (news)
+https://www.itsnicethat.com/features/paris-photo-2026-photobooks-photography-spotlight-231126  # agent, article of a site listed on Httpster (blog)
+https://www.kinfolk.com/stories/the-flow-state  # agent, article of a site listed on Httpster (magazine)
+https://unconditionalmagazine.com/stories/stephane-timonier  # agent, article of a site listed on Httpster (magazine)
+
+# Everything below is a placeholder pick from the pilot, chosen for spread across page types
+# rather than taste. Replace them with pages you rate.
+
+# landing
+https://linear.app
+https://stripe.com
+https://www.raycast.com
+https://posthog.com
+https://oxide.computer
+https://mercury.com
+https://obsidian.md
+
+# pricing
+https://linear.app/pricing
+https://www.notion.com/pricing
+
+# docs
+https://docs.stripe.com
+https://tailwindcss.com/docs/installation
+
+# editorial
+https://worksinprogress.co
+https://press.stripe.com
+https://ia.net/topics
+
+# portfolio
+https://www.pentagram.com
+https://rauno.me
+https://www.wearecollins.com
+
+# commerce
+https://teenage.engineering
+https://us.nothing.tech         # the bare domain puts a region picker over the page
+# https://www.aesop.com         # refuses automated requests (HTTP 403), so it can't be captured
+
+# single article
+https://asteriskmag.com/issues/16/six-gutenberg-revolutions-in-a-row
+https://www.noemamag.com/what-chinas-gene-editing-deaths-reveal-about-its-biotech-industry
+https://craigmod.com/essays/electric_bikes/
+
+# single product
+https://fellowproducts.com/products/stagg-ekg-electric-pour-over-kettle
+https://teenage.engineering/store/bc-1
+https://us.nothing.tech/products/headphone-1-pro

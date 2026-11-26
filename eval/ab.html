@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blind A/B</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f3f2ee; --fg: #1b1b19; --mute: #6d6c67; --line: #d9d7d0; --panel: #fbfaf7; --pick: #1b1b19; --pick-fg: #fbfaf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #131312; --fg: #eceae4; --mute: #98968f; --line: #2f2e2b; --panel: #1b1b19; --pick: #eceae4; --pick-fg: #131312; }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: grid; grid-template-rows: auto minmax(0, 1fr) auto;
+    background: var(--bg); color: var(--fg);
+    font: 14px/1.45 ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+  button, input { font: inherit; color: inherit; }
+  [hidden] { display: none !important; }
+
+  header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--line); }
+  header h1 { margin: 0; font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mute { color: var(--mute); }
+  #progress { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .spacer { flex: 1; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .seg button { border: 0; background: none; padding: 4px 10px; cursor: pointer; color: var(--mute); font-variant-numeric: tabular-nums; }
+  .seg button[aria-pressed="true"] { background: var(--panel); color: var(--fg); }
+
+  #stage { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px 16px; min-height: 0; }
+  .pane { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
+  .pane.picked { outline: 2px solid var(--pick); outline-offset: 1px; }
+  .pane iframe { position: absolute; top: 0; border: 0; transform-origin: 0 0; background: #fff; }
+
+  footer { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 10px 16px; border-top: 1px solid var(--line); }
+  .choices { display: flex; gap: 6px; }
+  .choices button, #next { border: 1px solid var(--line); background: var(--panel); border-radius: 6px; padding: 7px 12px; cursor: pointer; white-space: nowrap; }
+  .choices button[aria-pressed="true"], #next { background: var(--pick); color: var(--pick-fg); border-color: var(--pick); }
+  #next:disabled { opacity: .35; cursor: default; }
+  kbd { font: 11px ui-monospace, SFMono-Regular, monospace; opacity: .6; margin-left: 6px; }
+  #note { width: 100%; border: 1px solid var(--line); background: var(--panel); border-radius: 6px; padding: 7px 10px; }
+  :focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+
+  #results { overflow: auto; padding: 32px 16px 48px; }
+  #results > div { max-width: 760px; margin: 0 auto; }
+  #results h2 { margin: 0 0 6px; font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; font-weight: 600; }
+  #results p { margin: 0 0 6px; }
+  #results table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+  #results th, #results td { text-align: left; vertical-align: top; padding: 8px 12px 8px 0; border-top: 1px solid var(--line); }
+  #results th { font-weight: 500; color: var(--mute); border-top: 0; }
+  #results td:last-child, #results th:last-child { padding-right: 0; white-space: nowrap; }
+  a { color: inherit; text-underline-offset: 2px; }
+
+  @media (max-width: 760px) {
+    #stage { grid-template-columns: 1fr; grid-auto-rows: 1fr; }
+    footer { grid-template-columns: 1fr; }
+    .choices { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title">Blind A/B</h1>
+  <span class="mute" id="progress"></span>
+  <span class="spacer"></span>
+  <div class="seg" id="widths" role="group" aria-label="Preview width">
+    <button data-w="1440" aria-pressed="true">1440</button>
+    <button data-w="390" aria-pressed="false">390</button>
+  </div>
+</header>
+
+<main id="stage">
+  <div class="pane" data-side="x"><iframe title="Left page"></iframe></div>
+  <div class="pane" data-side="y"><iframe title="Right page"></iframe></div>
+</main>
+
+<section id="results" hidden><div></div></section>
+
+<footer id="controls">
+  <div class="choices">
+    <button data-pick="x" aria-pressed="false">Left is better<kbd>1</kbd></button>
+    <button data-pick="tie" aria-pressed="false">No real difference<kbd>0</kbd></button>
+    <button data-pick="y" aria-pressed="false">Right is better<kbd>2</kbd></button>
+  </div>
+  <input id="note" type="text" autocomplete="off" placeholder="Why? Optional, one line. Notes are what get fed back into the library.">
+  <button id="next" disabled>Next<kbd>↵</kbd></button>
+</footer>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const params = new URLSearchParams(location.search);
+const state = { run: null, pairs: [], i: 0, pick: null, picks: [], width: 1440 };
+
+const getJSON = async (url) => {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`${url}: ${r.status}`);
+  return r.json();
+};
+const el = (tag, text, attrs = {}) => {
+  const n = Object.assign(document.createElement(tag), attrs);
+  if (text != null) n.textContent = text;
+  return n;
+};
+
+function layout() {
+  for (const pane of document.querySelectorAll('.pane')) {
+    const frame = pane.firstElementChild;
+    const k = Math.min(1, pane.clientWidth / state.width);
+    frame.style.width = `${state.width}px`;
+    frame.style.height = `${pane.clientHeight / k}px`;
+    frame.style.transform = `scale(${k})`;
+    frame.style.left = `${Math.max(0, (pane.clientWidth - state.width * k) / 2)}px`;
+  }
+}
+
+function choose(pick) {
+  state.pick = pick;
+  for (const b of document.querySelectorAll('.choices button')) b.setAttribute('aria-pressed', String(b.dataset.pick === pick));
+  for (const p of document.querySelectorAll('.pane')) p.classList.toggle('picked', p.dataset.side === pick);
+  $('#next').disabled = false;
+}
+
+function show() {
+  const pair = state.pairs[state.i];
+  $('#title').textContent = pair.title;
+  $('#progress').textContent = `${state.i + 1} of ${state.pairs.length}`;
+  for (const pane of document.querySelectorAll('.pane')) {
+    pane.firstElementChild.src = `/runs/${state.run}/${pair.id}/${pane.dataset.side}.html`;
+    pane.classList.remove('picked');
+  }
+  for (const b of document.querySelectorAll('.choices button')) b.setAttribute('aria-pressed', 'false');
+  state.pick = null;
+  $('#note').value = '';
+  $('#note').blur(); // so 1 / 0 / 2 choose on the next pair instead of typing into the note
+  $('#next').disabled = true;
+  $('#next').firstChild.textContent = state.i === state.pairs.length - 1 ? 'Finish' : 'Next';
+  layout();
+}
+
+async function next() {
+  if (!state.pick) return;
+  state.picks.push({ pair: state.pairs[state.i].id, pick: state.pick, note: $('#note').value.trim() });
+  state.i++;
+  if (state.i < state.pairs.length) return show();
+
+  // All picks are in, so the blind can come off: resolve sides to arms and save.
+  const key = await getJSON(`/runs/${state.run}/key.json`);
+  for (const p of state.picks) p.preferred = p.pick === 'tie' ? 'tie' : key[p.pair][p.pick];
+  const saved = await fetch(`/api/picks/${state.run}`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ run: state.run, at: new Date().toISOString(), picks: state.picks }),
+  }).then((r) => r.ok, () => false);
+  results(state.picks, key, saved);
+}
+
+// Two-sided sign test on the pairs where a side was chosen.
+function chance(a, b) {
+  const n = a + b, k = Math.max(a, b);
+  let c = 1, tail = 0;
+  for (let i = 0; i <= n; i++) {
+    if (i >= k) tail += c;
+    c = (c * (n - i)) / (i + 1);
+  }
+  return Math.min(1, (2 * tail) / 2 ** n);
+}
+
+function results(picks, key, saved = true) {
+  const count = (v) => picks.filter((p) => p.preferred === v).length;
+  const lib = count('library'), base = count('baseline'), tie = count('tie');
+  $('#stage').hidden = $('#controls').hidden = $('#widths').hidden = true;
+  $('#title').textContent = 'Blind A/B results';
+  $('#progress').textContent = state.run;
+
+  const box = $('#results > div');
+  box.replaceChildren();
+  box.append(el('h2', `Library preferred in ${lib} of ${picks.length}`));
+  box.append(el('p', `Baseline preferred in ${base}, no real difference in ${tie}.`));
+  if (lib + base > 0) {
+    const pct = Math.round(chance(lib, base) * 100);
+    box.append(el('p', `If the library made no difference, a split at least this uneven would turn up about ${pct < 1 ? 'less than 1' : pct}% of the time.`, { className: 'mute' }));
+  }
+  box.append(el('p', saved ? `Saved to eval/runs/${state.run}/picks.json.` : 'Could not save the picks. Is the server still running?', { className: 'mute' }));
+
+  const table = el('table');
+  const head = el('tr');
+  for (const h of ['Pair', 'You preferred', 'Note', 'Open']) head.append(el('th', h));
+  table.append(head);
+  for (const p of picks) {
+    const row = el('tr');
+    row.append(el('td', p.pair), el('td', p.preferred === 'tie' ? 'no difference' : p.preferred), el('td', p.note || ''));
+    const links = el('td');
+    for (const side of ['x', 'y']) {
+      links.append(el('a', key[p.pair][side], { href: `/runs/${state.run}/${p.pair}/${side}.html`, target: '_blank' }), ' ');
+    }
+    row.append(links);
+    table.append(row);
+  }
+  box.append(table);
+  box.append(el('a', 'Review this run again', { href: `?run=${state.run}&redo` }));
+  $('#results').hidden = false;
+}
+
+function message(text) {
+  $('#stage').hidden = $('#controls').hidden = $('#widths').hidden = true;
+  $('#results > div').replaceChildren(el('p', text));
+  $('#results').hidden = false;
+}
+
+async function init() {
+  const runs = await getJSON('/api/runs');
+  state.run = params.get('run') || runs[0];
+  if (!state.run) return message('No runs yet. Build one with: npm run eval');
+  state.pairs = (await getJSON(`/runs/${state.run}/manifest.json`)).pairs;
+
+  if (!params.has('redo')) {
+    const saved = await fetch(`/runs/${state.run}/picks.json`).then((r) => (r.ok ? r.json() : null), () => null);
+    if (saved) return results(saved.picks, await getJSON(`/runs/${state.run}/key.json`));
+  }
+  show();
+}
+
+for (const b of document.querySelectorAll('.choices button')) b.addEventListener('click', () => choose(b.dataset.pick));
+$('#next').addEventListener('click', next);
+for (const b of document.querySelectorAll('#widths button')) {
+  b.addEventListener('click', () => {
+    state.width = Number(b.dataset.w);
+    for (const o of document.querySelectorAll('#widths button')) o.setAttribute('aria-pressed', String(o === b));
+    layout();
+  });
+}
+addEventListener('keydown', (e) => {
+  if ($('#controls').hidden) return;
+  if (e.key === 'Enter') return next();
+  if (e.target === $('#note')) return;
+  const pick = { 1: 'x', 0: 'tie', 2: 'y' }[e.key];
+  if (pick) choose(pick);
+});
+new ResizeObserver(layout).observe($('#stage'));
+init().catch((e) => message(`Could not load the run: ${e.message}`));
+</script>
+</body>
+</html>

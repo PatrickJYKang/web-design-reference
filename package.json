@@ -1,0 +1,17 @@
+{
+  "name": "web-design-reference",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "capture": "node scripts/capture.mjs",
+    "cold": "node scripts/cold.mjs",
+    "pair": "node scripts/pair.mjs",
+    "draft": "node scripts/draft.mjs",
+    "index": "node scripts/index.mjs",
+    "eval": "node scripts/eval.mjs",
+    "ab": "node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "^1.65.1"
+  }
+}
